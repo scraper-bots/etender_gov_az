@@ -16,7 +16,7 @@ This comprehensive analysis examines **2,831 e-tender records** from the Azerbai
 
 ## 1. Tender Distribution by Event Type
 
-![Tenders by Event Type](01_tenders_by_event_type.png)
+![Tenders by Event Type](/charts/01_tenders_by_event_type.png)
 
 ### Insights
 
