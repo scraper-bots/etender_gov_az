@@ -16,7 +16,7 @@ This comprehensive analysis examines **2,831 e-tender records** from the Azerbai
 
 ## 1. Tender Distribution by Event Type
 
-![Tenders by Event Type](01_tenders_by_event_type.png)
+![Tenders by Event Type](charts/01_tenders_by_event_type.png)
 
 ### Insights
 
@@ -42,7 +42,7 @@ The e-tender platform is **overwhelmingly dominated by Open Tenders**, accountin
 
 ## 2. Tender Status Distribution
 
-![Tenders by Status](02_tenders_by_status.png)
+![Tenders by Status](charts/02_tenders_by_status.png)
 
 ### Insights
 
@@ -68,7 +68,7 @@ The status breakdown reveals an active and well-managed procurement pipeline:
 
 ## 3. Top 15 Most Active Buyer Organizations
 
-![Top Buyer Organizations](03_top_buyer_organizations.png)
+![Top Buyer Organizations](charts/03_top_buyer_organizations.png)
 
 ### Insights
 
@@ -104,7 +104,7 @@ The procurement landscape shows **significant concentration** among key governme
 
 ## 4. Tender Publication Timeline
 
-![Tenders Timeline](04_tenders_timeline.png)
+![Tenders Timeline](charts/04_tenders_timeline.png)
 
 ### Insights
 
@@ -138,7 +138,7 @@ The timeline analysis reveals **dramatic seasonal and temporal patterns**:
 
 ## 5. Tender Duration Analysis
 
-![Tender Duration Analysis](05_tender_duration_analysis.png)
+![Tender Duration Analysis](charts/05_tender_duration_analysis.png)
 
 ### Insights
 
@@ -170,43 +170,55 @@ The timeline analysis reveals **dramatic seasonal and temporal patterns**:
 
 ---
 
-## 6. Award Rate Analysis
+## 6. Tender Status by Event Type
 
-![Award Rate Analysis](06_award_rate_analysis.png)
+![Tender Status by Event Type](charts/06_status_by_event_type.png)
 
 ### Insights
 
-**Critical Finding:** The data shows **0% award rate** across all tender types.
+This dual-panel analysis provides a comprehensive view of tender statuses across the platform and how they distribute across different procurement methods.
 
-**Possible Explanations:**
-1. **Data Collection Timing:** Dataset may capture tenders before awards are finalized
-2. **Delayed Award Updates:** Award information might be updated in a separate system or later
-3. **In-Progress Tenders:** Many tenders may still be in evaluation or award phases
-4. **Data Completeness:** Award data might not be included in this export
+**Left Panel - Overall Status Distribution:**
+- Shows the breakdown of all tenders by their current status
+- Reveals the health of the procurement pipeline
+- Indicates processing efficiency and completion rates
 
-**What This Means:**
-- This dataset focuses on tender **publication and invitation** phase
-- Award outcomes would require additional data sources or follow-up queries
-- The absence of award data doesn't indicate problems with the procurement process
+**Right Panel - Status by Event Type:**
+- Displays how different procurement methods (Open Tender, Limited Tender, etc.) are distributed across various statuses
+- Helps identify if certain procurement types have different lifecycle patterns
+- Shows stacked view for easy comparison
+
+**Key Patterns:**
+- **Open Tender Dominance:** Given that 99.3% are Open Tenders, this type will naturally dominate all status categories
+- **Pipeline Flow:** The distribution across Active, Closed, and other statuses indicates procurement processing velocity
+- **Completion Rates:** Shows what percentage of tenders have moved from active to closed stages
+- **Process Consistency:** Reveals whether different procurement types have similar or different processing patterns
 
 ### Actionable Insights
 
-✅ **For Data Analysis:**
-- **Supplementary Sources:** Integrate award data from official contract registries
-- **Temporal Analysis:** Re-analyze closed tenders after sufficient time for awards
-- **System Integration:** Connect tender publication data with contract award systems
-- **Completeness Checks:** Verify data export includes all relevant fields
+✅ **For Procurement Managers:**
+- **Monitor Pipeline:** Track the ratio of Active to Closed tenders for workflow optimization
+- **Identify Bottlenecks:** If too many tenders remain in Active status, investigate processing delays
+- **Resource Allocation:** Use status distribution to plan staffing for tender evaluation teams
+- **Type-Specific Analysis:** Compare processing times across different event types to identify best practices
 
-✅ **For Transparency:**
-- **Publish Awards:** Ensure award decisions are publicly available and timely
-- **Link Systems:** Connect tender announcements with final award notifications
-- **Winner Information:** Populate awardedParticipantName fields systematically
+✅ **For Suppliers:**
+- **Timing Strategy:** Understanding status distribution helps predict when new opportunities become available
+- **Follow-up Actions:** Track status changes to know when to follow up on submitted bids
+- **Market Activity:** High proportion of Active tenders indicates current opportunities
+- **Planning Cycles:** Status patterns help anticipate procurement cycles
+
+✅ **For System Administrators:**
+- **Automated Alerts:** Set up notifications when tenders change status
+- **Data Quality:** Ensure status updates are timely and accurate
+- **Workflow Automation:** Identify opportunities to automate status transitions
+- **Performance Metrics:** Use status transitions as KPIs for system efficiency
 
 ---
 
 ## 7. Tender Publications by Day of Week
 
-![Day of Week Analysis](07_day_of_week_analysis.png)
+![Day of Week Analysis](charts/07_day_of_week_analysis.png)
 
 ### Insights
 
@@ -239,7 +251,7 @@ The timeline analysis reveals **dramatic seasonal and temporal patterns**:
 
 ## 8. Top Tender Categories
 
-![Top Categories](08_top_categories.png)
+![Top Categories](charts/08_top_categories.png)
 
 ### Insights
 
