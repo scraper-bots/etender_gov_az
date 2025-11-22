@@ -149,45 +149,41 @@ plt.tight_layout()
 plt.savefig('charts/05_tender_duration_analysis.png', dpi=300, bbox_inches='tight')
 plt.close()
 
-# ===== CHART 6: Award Rate Analysis =====
-print("6. Generating Award Rate Analysis...")
+# ===== CHART 6: Tender Status by Event Type =====
+print("6. Generating Tender Status by Event Type...")
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 7))
 
-# Overall award rate
-award_counts = df['isAwarded'].value_counts()
-colors_award = ['#e74c3c', '#2ecc71']
-labels_award = ['Not Awarded', 'Awarded']
-wedges, texts, autotexts = ax1.pie([award_counts.get(False, 0), award_counts.get(True, 0)],
-                                     labels=labels_award,
+# Status distribution pie chart
+status_counts = df['eventStatusName'].value_counts()
+colors_status = plt.cm.Set3(np.linspace(0, 1, len(status_counts)))
+wedges, texts, autotexts = ax1.pie(status_counts.values,
+                                     labels=status_counts.index,
                                      autopct='%1.1f%%',
-                                     colors=colors_award,
+                                     colors=colors_status,
                                      startangle=90,
-                                     textprops={'fontsize': 12, 'fontweight': 'bold'})
+                                     textprops={'fontsize': 11, 'fontweight': 'bold'})
 for autotext in autotexts:
-    autotext.set_color('white')
-    autotext.set_fontsize(13)
-ax1.set_title('Overall Award Rate', fontweight='bold', fontsize=14)
+    autotext.set_color('black')
+    autotext.set_fontsize(10)
+ax1.set_title('Overall Tender Status Distribution', fontweight='bold', fontsize=14)
 ax1.axis('equal')
 
-# Award rate by event type
-award_by_type = df.groupby('eventTypeName')['isAwarded'].agg(['sum', 'count'])
-award_by_type['rate'] = (award_by_type['sum'] / award_by_type['count'] * 100)
-award_by_type = award_by_type.sort_values('rate', ascending=True)
+# Tender count by event type and status (stacked bar)
+status_by_type = df.groupby(['eventTypeName', 'eventStatusName']).size().unstack(fill_value=0)
+status_by_type_sorted = status_by_type.loc[status_by_type.sum(axis=1).sort_values(ascending=True).index]
 
-colors_type = plt.cm.RdYlGn(np.linspace(0.3, 0.9, len(award_by_type)))
-bars = ax2.barh(range(len(award_by_type)), award_by_type['rate'], color=colors_type)
-ax2.set_yticks(range(len(award_by_type)))
-ax2.set_yticklabels(award_by_type.index)
-ax2.set_xlabel('Award Rate (%)', fontweight='bold')
-ax2.set_title('Award Rate by Event Type', fontweight='bold', fontsize=14)
+# Plot stacked horizontal bar chart
+status_by_type_sorted.plot(kind='barh', stacked=True, ax=ax2,
+                           color=plt.cm.Set3(np.linspace(0, 1, len(status_by_type_sorted.columns))),
+                           edgecolor='black', linewidth=0.5)
+ax2.set_xlabel('Number of Tenders', fontweight='bold')
+ax2.set_ylabel('Event Type', fontweight='bold')
+ax2.set_title('Tender Count by Event Type and Status', fontweight='bold', fontsize=14)
+ax2.legend(title='Status', bbox_to_anchor=(1.05, 1), loc='upper left', fontsize=9)
 ax2.grid(axis='x', alpha=0.3)
 
-# Add value labels
-for i, (value, bar) in enumerate(zip(award_by_type['rate'], bars)):
-    ax2.text(value + 0.5, i, f'{value:.1f}%', va='center', fontweight='bold')
-
 plt.tight_layout()
-plt.savefig('charts/06_award_rate_analysis.png', dpi=300, bbox_inches='tight')
+plt.savefig('charts/06_status_by_event_type.png', dpi=300, bbox_inches='tight')
 plt.close()
 
 # ===== CHART 7: Day of Week Analysis =====
