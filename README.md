@@ -42,7 +42,7 @@ The e-tender platform is **overwhelmingly dominated by Open Tenders**, accountin
 
 ## 2. Tender Status Distribution
 
-![Tenders by Status](02_tenders_by_status.png)
+![Tenders by Status](/charts/02_tenders_by_status.png)
 
 ### Insights
 
@@ -68,7 +68,7 @@ The status breakdown reveals an active and well-managed procurement pipeline:
 
 ## 3. Top 15 Most Active Buyer Organizations
 
-![Top Buyer Organizations](03_top_buyer_organizations.png)
+![Top Buyer Organizations](/charts/03_top_buyer_organizations.png)
 
 ### Insights
 
@@ -104,7 +104,7 @@ The procurement landscape shows **significant concentration** among key governme
 
 ## 4. Tender Publication Timeline
 
-![Tenders Timeline](04_tenders_timeline.png)
+![Tenders Timeline](/charts/04_tenders_timeline.png)
 
 ### Insights
 
@@ -138,7 +138,7 @@ The timeline analysis reveals **dramatic seasonal and temporal patterns**:
 
 ## 5. Tender Duration Analysis
 
-![Tender Duration Analysis](05_tender_duration_analysis.png)
+![Tender Duration Analysis](/charts/05_tender_duration_analysis.png)
 
 ### Insights
 
@@ -172,7 +172,7 @@ The timeline analysis reveals **dramatic seasonal and temporal patterns**:
 
 ## 6. Award Rate Analysis
 
-![Award Rate Analysis](06_award_rate_analysis.png)
+![Award Rate Analysis](/charts/06_award_rate_analysis.png)
 
 ### Insights
 
@@ -206,7 +206,7 @@ The timeline analysis reveals **dramatic seasonal and temporal patterns**:
 
 ## 7. Tender Publications by Day of Week
 
-![Day of Week Analysis](07_day_of_week_analysis.png)
+![Day of Week Analysis](/charts/07_day_of_week_analysis.png)
 
 ### Insights
 
@@ -239,7 +239,7 @@ The timeline analysis reveals **dramatic seasonal and temporal patterns**:
 
 ## 8. Top Tender Categories
 
-![Top Categories](08_top_categories.png)
+![Top Categories](/charts/08_top_categories.png)
 
 ### Insights
 
