@@ -172,7 +172,7 @@ The timeline analysis reveals **dramatic seasonal and temporal patterns**:
 
 ## 6. Tender Status by Event Type
 
-![Award Rate Analysis](/charts/06_award_rate_analysis.png)
+![Award Rate Analysis](/charts/06_status_by_event_type.png)
 
 ### Insights
 
